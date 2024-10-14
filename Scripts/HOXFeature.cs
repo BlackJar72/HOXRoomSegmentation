@@ -1,0 +1,16 @@
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine;
+
+
+namespace kfutils.hox {
+
+    [System.Serializable]
+    public class HOXFeature {
+        public GameObject feature;
+        public Vector3 position;
+        public Vector3 rotation;
+        public Vector3 scale;
+    }
+
+}
