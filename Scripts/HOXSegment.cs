@@ -25,6 +25,7 @@ namespace kfutils.hox {
                     mirrored.transform.localPosition += location - feature.position;
                     Vector3 mirroredRot = feature.rotation;
                     mirroredRot.y *= -1;
+                    mirroredRot.z *= -1;
                     mirrored.transform.localRotation = Quaternion.Euler(mirroredRot);
                     mirrored.transform.localScale = feature.scale;
                 }
