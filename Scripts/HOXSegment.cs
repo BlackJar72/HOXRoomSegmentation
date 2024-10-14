@@ -23,7 +23,9 @@ namespace kfutils.hox {
                 if(symmetrical) {
                     GameObject mirrored = GameObject.Instantiate(feature.feature, parent.transform);
                     mirrored.transform.localPosition += location - feature.position;
-                    mirrored.transform.localRotation = Quaternion.Euler(feature.rotation);
+                    Vector3 mirroredRot = feature.rotation;
+                    mirroredRot.y *= -1;
+                    mirrored.transform.localRotation = Quaternion.Euler(mirroredRot);
                     mirrored.transform.localScale = feature.scale;
                 }
             }
