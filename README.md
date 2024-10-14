@@ -14,3 +14,5 @@ structured similarly: A head region (with either eyes and mouth, or a pulpit and
 (with either legs or pews), and a tail area (with not much going one).  Now think of a barracks with rows of beds. 
 Turn off symmetry, and immagine with bathroom stalls or bowling lanes.  The possibiliies are endless, though, 
 admittedly, far from all incompasing.
+
+This is also likely to more powerful and ultimately simpler than coding special rules for individual prefab types.
