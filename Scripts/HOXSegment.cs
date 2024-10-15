@@ -20,12 +20,14 @@ namespace kfutils.hox {
                 placed.transform.localPosition += location + feature.position;
                 placed.transform.localRotation = Quaternion.Euler(feature.rotation);
                 placed.transform.localScale = feature.scale;
-                if(symmetrical) {
+                if(symmetrical && (feature.position.x != 0)) {
                     GameObject mirrored = GameObject.Instantiate(feature.feature, parent.transform);
                     mirrored.transform.localPosition += location - feature.position;
                     Vector3 mirroredRot = feature.rotation;
-                    mirroredRot.y *= -1;
-                    mirroredRot.z *= -1;
+                    if(feature.mirrorRotations) {
+                        mirroredRot.y *= -1;
+                        mirroredRot.z *= -1;
+                    }
                     mirrored.transform.localRotation = Quaternion.Euler(mirroredRot);
                     mirrored.transform.localScale = feature.scale;
                 }

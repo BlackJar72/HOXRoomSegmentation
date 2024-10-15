@@ -10,7 +10,9 @@ namespace kfutils.hox {
         public GameObject feature;
         public Vector3 position;
         public Vector3 rotation;
-        public Vector3 scale;
+        public Vector3 scale = new Vector3(1, 1, 1);
+        public bool mirrorRotations = true;
     }
+
 
 }
