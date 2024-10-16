@@ -16,3 +16,9 @@ Turn off symmetry, and immagine with bathroom stalls or bowling lanes.  The poss
 admittedly, far from all incompasing.
 
 This is also likely to more powerful and ultimately simpler than coding special rules for individual prefab types.
+
+NOTE: This idea jumped into my head while at the park and I felt like working on it.  However, I have less time 
+and energy than I use to, and am often sleep deprived.  Also, doubt I'd ever have a use for it, as I'm not really 
+interested in make games with heavy roaguelike elements in the future.  So when or if I actually finish it, or 
+work on it more in general, I do not know.
+
