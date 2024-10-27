@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f5e8cefeb8d38b2a0b1c8280ece7e8, type: 3}
+  m_Name: SmallTable
+  m_EditorClassIdentifier: 
+  features:
+  - feature: {fileID: 8189488293648204906, guid: 69a03a001adc30bb991f7c827f4aec4a, type: 3}
+    chance: 3
+  - feature: {fileID: 7249532775295722579, guid: 919aa6e3e6168d49e9271607198a1f66, type: 3}
+    chance: 2
+  footprint: {x: 1, y: 1}

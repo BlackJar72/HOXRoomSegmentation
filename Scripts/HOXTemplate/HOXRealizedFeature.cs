@@ -6,8 +6,8 @@ using UnityEngine;
 namespace kfutils.hox {
 
     [System.Serializable]
-    public class HOXFeature {
-        public GameObject feature;
+    public class HOXRealizedFeature {
+        public HOXAbstractFeature feature;
         public Vector3 position;
         public Vector3 rotation;
         public Vector3 scale = new Vector3(1, 1, 1);
