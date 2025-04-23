@@ -6,15 +6,23 @@ using UnityEngine;
 namespace kfutils.hox {
 
     [System.Serializable]
-    public class HOXSegment {
+    [CreateAssetMenu(menuName = "HOX/HOX Segment", fileName = "HOXSegment", order = 40)]
+    public class HOXSegment : ScriptableObject {
+
         // length and position are along the axis of progression (i.e., axis of symmetry); with is perpendicular to it
-        public float width, length;
-        public List<HOXRealizedFeature> features;
-        public bool symmetrical = true;
+        [SerializeField] float width;
+        [SerializeField] float length;
+        [SerializeField] List<HOXRealizedFeature> features;
+        [SerializeField] bool symmetrical = true;
+        
+        public float Width => width;
+        public float Length => length;
+        public List<HOXRealizedFeature> Features => features;
+        public bool Symmetrical => Symmetrical;
 
 
-        public void Build(HOXRegion region, Vector3 location) {
-            HOXObject parent = region.Parent;
+
+        public void Build(HOXObject parent, HOXRegion region, Vector3 location) {
             foreach(HOXRealizedFeature feature in features) {
                 GameObject placed = GameObject.Instantiate(feature.feature.GetObject(), parent.transform);
                 placed.transform.localPosition += location + feature.position;

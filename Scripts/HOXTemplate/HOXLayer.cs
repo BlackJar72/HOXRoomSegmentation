@@ -6,28 +6,23 @@ using UnityEngine;
 namespace kfutils.hox {
 
     [System.Serializable]
-    public class HOXLayer {
-        private HOXObject parent;
-        public List<HOXRegion> regions;
+    [CreateAssetMenu(menuName = "HOX/HOX Layer", fileName = "HOXLayer", order = 20)]
+    public class HOXLayer : ScriptableObject {
+
+        [SerializeField] List<HOXRegion> regions;
 
 
         // Properties
-        public HOXObject Parent => parent;
+        public List<HOXRegion> Regions => regions;
 
 
-        public void SetParent(HOXObject p) {
-            parent = p;
+        public void Build(HOXObject parent) {
             foreach(HOXRegion region in regions) {
-                region.SetParent(this);
+                region.Build(parent);
             }
         }
 
 
-        public void Build() {
-            foreach(HOXRegion region in regions) {
-                region.Build();
-            }
-        }
     }
 
 }

@@ -9,14 +9,10 @@ namespace kfutils.hox {
     public class HOXObject : MonoBehaviour {
         /// <summary>The layers to be generated; multiple allowed, so allow overlapping patterns.  Analogous to HOX gene
         /// duplications that allow more complex body plans in vertibrates. </summary>
-        public List<HOXLayer> hoxLayers;
+        [SerializeField] List<HOXLayer> hoxLayers;
 
 
-        void Awake() {
-            foreach(HOXLayer layer in hoxLayers) {
-                layer.SetParent(this);
-            }
-        }
+        void Awake() {}
 
 
         void Start() {
@@ -27,7 +23,7 @@ namespace kfutils.hox {
 
         public void Build() {
             foreach(HOXLayer layer in hoxLayers) {
-                layer.Build();
+                layer.Build(this);
             }
         }
 

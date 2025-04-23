@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -96,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -147,9 +144,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -199,8 +195,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1919954179}
-  - component: {fileID: 1919954178}
+  - component: {fileID: 1919954180}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -388,101 +388,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1919954178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919954177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 890a2410e96eed09ea0946b79abb10f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoxLayers:
-  - regions:
-    - width: 0
-      length: 0
-      position: 0
-      segment:
-        width: 0
-        length: 0
-        features:
-        - feature: {fileID: 11400000, guid: 975c5c26368e20821b2cb4cda7b563b4, type: 2}
-          position: {x: 5, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        - feature: {fileID: 11400000, guid: a36eba13246258ae99b18705ea010f72, type: 2}
-          position: {x: -1.5, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        symmetrical: 0
-      numSegments: 1
-    - width: 0
-      length: 0
-      position: 2
-      segment:
-        width: 10
-        length: 1.5
-        features:
-        - feature: {fileID: 11400000, guid: 9dfdea96fea1691049c5b78f6f09235f, type: 2}
-          position: {x: 2, y: 0, z: 0}
-          rotation: {x: 0, y: 180, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        - feature: {fileID: 11400000, guid: 9dfdea96fea1691049c5b78f6f09235f, type: 2}
-          position: {x: 4.5, y: 0, z: 0}
-          rotation: {x: 0, y: 180, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        symmetrical: 1
-      numSegments: 7
-    - width: 0
-      length: 0
-      position: 15
-      segment:
-        width: 0
-        length: 0
-        features:
-        - feature: {fileID: 11400000, guid: 3a9fc804558da05f3bf3ba31ddb60b4a, type: 2}
-          position: {x: 0, y: 0, z: 0}
-          rotation: {x: 0, y: 180, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        - feature: {fileID: 11400000, guid: d79f1cc9eb07db8a98fbb61baf9b7927, type: 2}
-          position: {x: 0, y: 0, z: 1}
-          rotation: {x: 0, y: 180, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        symmetrical: 1
-      numSegments: 1
-  - regions:
-    - width: 0
-      length: 0
-      position: 0
-      segment:
-        width: 0
-        length: 0
-        features: []
-        symmetrical: 1
-      numSegments: 0
-    - width: 0
-      length: 0
-      position: 0
-      segment:
-        width: 10
-        length: 2.5
-        features:
-        - feature: {fileID: 11400000, guid: 86755388026516bb2ace5e249a826050, type: 2}
-          position: {x: 6.5, y: 0, z: 0}
-          rotation: {x: 0, y: 0, z: 0}
-          scale: {x: 1, y: 1, z: 1}
-          mirrorRotations: 1
-        symmetrical: 1
-      numSegments: 7
 --- !u!4 &1919954179
 Transform:
   m_ObjectHideFlags: 0
@@ -498,6 +403,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919954180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919954177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0a311ed57941f31b79859b26a14991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoxLayers: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

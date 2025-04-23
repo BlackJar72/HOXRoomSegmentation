@@ -6,30 +6,20 @@ using UnityEngine;
 namespace kfutils.hox {
 
     [System.Serializable]
-    public class HOXRegion {
-        private HOXLayer layer;
-        private HOXObject parent;
-        // length and position are along the axis of progression (i.e., axis of symmetry); with is perpendicular to it
-        public float width, length, position;
-        public HOXSegment segment;
-        public uint numSegments;
+    [CreateAssetMenu(menuName = "HOX/HOX Region", fileName = "HOXRegion", order = 30)]
+    public class HOXRegion : ScriptableObject {
+
+        [SerializeField] float width;
+        [SerializeField] float length;
+        [SerializeField] float position;
+        [SerializeField] HOXSegment segment;
+        [SerializeField] uint numSegments;
 
 
-        //Properties
-        public HOXLayer Layer => layer;
-        public HOXObject Parent => parent;
-
-
-        public void SetParent(HOXLayer l) {
-            layer = l;
-            parent = l.Parent;
-        }
-
-
-        public void Build() {
+        public void Build(HOXObject parent) {
             for(int i = 0; i < numSegments; i++) {
-                Vector3 location = parent.transform.position + ((position + (segment.length * i)) * parent.transform.forward);
-                segment.Build(this, location);
+                Vector3 location = parent.transform.position + ((position + (segment.Length * i)) * parent.transform.forward);
+                segment.Build(parent, this, location);
             }
         }
 
