@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ccc6b339fda3b8e909cc030eea92ba, type: 3}
-  m_Name: SmallTable
+  m_Script: {fileID: 11500000, guid: 4a4fd5a5832384f9385d660be468e545, type: 3}
+  m_Name: ChappleL1
   m_EditorClassIdentifier: 
-  feature: {fileID: 11400000, guid: 139c801f8b9ce81a0ab4dae4cbc97aba, type: 2}
-  footprint: {x: 4, y: 4}
+  regions:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 499f3a333a2a35fe59639c4004f13004, type: 2}
+  - {fileID: 0}

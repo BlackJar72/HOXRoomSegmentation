@@ -12,12 +12,12 @@ namespace kfutils.hox {
     /// Variations representing different constrcuction should typically be handled in generated the segments,
     /// not here (though special exceptions could exist).
     [System.Serializable]
-    [CreateAssetMenu(menuName = "HOX/Randomized Feature", fileName = "Features", order = 102)]
-    public class HOXSelectableFeature : HOXAbstractFeature {
+    [CreateAssetMenu(menuName = "HOX/Randomized Placer", fileName = "FeaturePlacers", order = 202)]
+    public class HOXSelectablePlacer : HOXAbstractPlacer {
 
         [System.Serializable]
         public struct PotentialFeature {
-            [SerializeField] public HOXAbstractPlacer feature;
+            [SerializeField] public GameObject feature;
             [SerializeField] [Range(1, 100)] public int chance;
         }
 
@@ -30,14 +30,14 @@ namespace kfutils.hox {
         public override Vector2 GetFootprint() => footprint;
 
 
-        public override HOXAbstractPlacer GetPlacer() {
+        public override GameObject GetObject() {
             int chances = 1;
             foreach (PotentialFeature f in features) {
                 chances += f.chance;
             }
             int roll = Random.Range(0, chances);
             int i = 0;
-            HOXAbstractPlacer output = null;
+            GameObject output = null;
             //Debug.Log(chances + ", " + roll);
             while((output == null) && roll > -1) {
                 if(roll <= features[i].chance) {

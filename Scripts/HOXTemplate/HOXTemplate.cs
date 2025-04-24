@@ -6,23 +6,20 @@ using UnityEngine;
 namespace kfutils.hox {
 
     [System.Serializable]
-    public class HOXObject : MonoBehaviour {
+    [CreateAssetMenu(menuName = "HOX/HOX Template", fileName = "HOXTemplate", order = 0)]
+    public class HOXTemplate : ScriptableObject {
         /// <summary>The layers to be generated; multiple allowed, so allow overlapping patterns.  Analogous to HOX gene
         /// duplications that allow more complex body plans in vertibrates. </summary>
-        [SerializeField] HOXTemplate template;
+        [SerializeField] List<HOXLayer> hoxLayers;
 
 
         void Awake() {}
 
 
-        void Start() {
-            // This will be removed later, but good for testing during early development
-            Build();
-        }
-
-
-        public void Build() {
-            template.Build(this);
+        public void Build(HOXObject hox) {
+            foreach(HOXLayer layer in hoxLayers) {
+                layer.Build(hox);
+            }
         }
 
     }

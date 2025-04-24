@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f5e8cefeb8d38b2a0b1c8280ece7e8, type: 3}
+  m_Script: {fileID: 11500000, guid: f1ccc6b339fda3b8e909cc030eea92ba, type: 3}
   m_Name: Pulpit
   m_EditorClassIdentifier: 
-  features:
-  - feature: {fileID: 4343456057898599890, guid: 10bbd9aee30d2ec069abb37a4bd804f3, type: 3}
-    chance: 10
-  - feature: {fileID: 6644625608723181870, guid: cebcded72a1cd4d7e81e3521476abd30, type: 3}
-    chance: 2
-  footprint: {x: 1, y: 1}
+  feature: {fileID: 11400000, guid: 82e0c1d7c13e66ed3a2c9962de5771a0, type: 2}
+  footprint: {x: 2, y: 2}

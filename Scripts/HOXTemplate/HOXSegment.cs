@@ -10,6 +10,7 @@ namespace kfutils.hox {
     public class HOXSegment : ScriptableObject {
 
         // length and position are along the axis of progression (i.e., axis of symmetry); with is perpendicular to it
+        // FIXME: Some of this should be stored else where to allow mutability!!!
         [SerializeField] float width;
         [SerializeField] float length;
         [SerializeField] List<HOXRealizedFeature> features;
@@ -20,16 +21,24 @@ namespace kfutils.hox {
         public List<HOXRealizedFeature> Features => features;
         public bool Symmetrical => Symmetrical;
 
-
-
-        public void Build(HOXObject parent, HOXRegion region, Vector3 location) {
+        
+        public List<HOXRealizedPlacer> GetPlacers() {
+            List<HOXRealizedPlacer> output = new List<HOXRealizedPlacer>();
             foreach(HOXRealizedFeature feature in features) {
-                GameObject placed = GameObject.Instantiate(feature.feature.GetObject(), parent.transform);
+               output.Add(feature.GetPlacer());
+            }
+            return output;
+        }
+
+
+        public void Build(HOXObject parent, HOXRegion region, List<HOXRealizedPlacer> placers, Vector3 location) {
+            foreach(HOXRealizedPlacer feature in placers) {
+                GameObject placed = GameObject.Instantiate(feature.placer.GetObject(), parent.transform);
                 placed.transform.localPosition += location + feature.position;
                 placed.transform.localRotation = Quaternion.Euler(feature.rotation);
                 placed.transform.localScale = feature.scale;
                 if(symmetrical && (feature.position.x != 0)) {
-                    GameObject mirrored = GameObject.Instantiate(feature.feature.GetObject(), parent.transform);
+                    GameObject mirrored = GameObject.Instantiate(feature.placer.GetObject(), parent.transform);
                     mirrored.transform.localPosition += location - feature.position;
                     Vector3 mirroredRot = feature.rotation;
                     if(feature.mirrorRotations) {

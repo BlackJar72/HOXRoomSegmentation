@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ccc6b339fda3b8e909cc030eea92ba, type: 3}
-  m_Name: SmallTable
+  m_Script: {fileID: 11500000, guid: bd31bf2b71f9ee537abe92a51b9f9e08, type: 3}
+  m_Name: Pillars
   m_EditorClassIdentifier: 
-  feature: {fileID: 11400000, guid: 139c801f8b9ce81a0ab4dae4cbc97aba, type: 2}
-  footprint: {x: 4, y: 4}
+  feature: {fileID: 7547049855009987716, guid: d8f6f5c28a65a9a918031f2864dd72e0, type: 3}
+  footprint: {x: 2, y: 2}

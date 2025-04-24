@@ -8,7 +8,9 @@ namespace kfutils.hox {
     [System.Serializable]
     [CreateAssetMenu(menuName = "HOX/HOX Region", fileName = "HOXRegion", order = 30)]
     public class HOXRegion : ScriptableObject {
+        
 
+        // FIXME: Some of this should be stored else where to allow mutability!!!
         [SerializeField] float width;
         [SerializeField] float length;
         [SerializeField] float position;
@@ -19,7 +21,7 @@ namespace kfutils.hox {
         public void Build(HOXObject parent) {
             for(int i = 0; i < numSegments; i++) {
                 Vector3 location = parent.transform.position + ((position + (segment.Length * i)) * parent.transform.forward);
-                segment.Build(parent, this, location);
+                segment.Build(parent, this, segment.GetPlacers(), location);
             }
         }
 

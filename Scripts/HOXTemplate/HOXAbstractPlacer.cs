@@ -6,13 +6,13 @@ using UnityEngine;
 namespace kfutils.hox {
 
     [System.Serializable]
-    public abstract class HOXAbstractFeature : ScriptableObject {
+    public abstract class HOXAbstractPlacer : ScriptableObject {
 
         /// <summary>
         /// Returns the prefab to be instantiated.
         /// </summary>
         /// <returns>Prefab for feature.</returns>
-        public abstract HOXAbstractPlacer GetPlacer();
+        public abstract GameObject GetObject();
 
         /// <summary>
         /// The 2D area taken up by the feature, with X as the width and Y as the depth.

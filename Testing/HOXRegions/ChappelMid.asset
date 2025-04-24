@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ccc6b339fda3b8e909cc030eea92ba, type: 3}
-  m_Name: SmallTable
+  m_Script: {fileID: 11500000, guid: 299cbffa74e934f0da122f50e54ce144, type: 3}
+  m_Name: ChappelMid
   m_EditorClassIdentifier: 
-  feature: {fileID: 11400000, guid: 139c801f8b9ce81a0ab4dae4cbc97aba, type: 2}
-  footprint: {x: 4, y: 4}
+  width: 0
+  length: 0
+  position: 0
+  segment: {fileID: 11400000, guid: 88f88f74b450faec6952966701a0d93c, type: 2}
+  numSegments: 5

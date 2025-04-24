@@ -10,8 +10,25 @@ namespace kfutils.hox {
         public HOXAbstractFeature feature;
         public Vector3 position;
         public Vector3 rotation;
-        public Vector3 scale = new Vector3(1, 1, 1);
+        public Vector3 scale = Vector3.one;
         public bool mirrorRotations = true;
+        public HOXRealizedPlacer GetPlacer() => new(this);
+    }
+
+
+    public class HOXRealizedPlacer {
+        public HOXAbstractPlacer placer;
+        public Vector3 position;
+        public Vector3 rotation;
+        public Vector3 scale = Vector3.one;
+        public bool mirrorRotations;
+        public HOXRealizedPlacer(HOXRealizedFeature feature) {
+            placer = feature.feature.GetPlacer();
+            position = feature.position;
+            rotation = feature.rotation;
+            scale = feature.scale;
+            mirrorRotations = feature.mirrorRotations;
+        }
     }
 
 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61228d53c433a7627a38312bf0d9d900, type: 3}
+  m_Name: HOXSegment
+  m_EditorClassIdentifier: 
+  width: 7
+  length: 3
+  features:
+  - feature: {fileID: 11400000, guid: 14da51a29cdc825a9858e1bfba25b6e7, type: 2}
+    position: {x: 2, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mirrorRotations: 1
+  symmetrical: 1
